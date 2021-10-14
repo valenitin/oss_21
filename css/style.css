@@ -55,11 +55,13 @@ header  {
     flex-basis: 334px;
     margin-right: 160px;
 }
-
+.nav__item{
+    transition: color 0.3s ease-in-out;
+}
 .nav__item:hover,
 .nav__item:focus{
     color: #1b1b1b;
-    transition: color 0.3s ease-in-out;
+
 }
 
 /*hero*/
@@ -114,4 +116,44 @@ header  {
 
 .about__text + .about__text{
     margin-top: 8px;
+}
+
+
+/*footer*/
+.footer{
+    padding-bottom: 50px;
+}
+.footer__title{
+    margin-bottom: 30px;
+
+    font-size: 28px;
+    color: #357ece;
+
+}
+.contacts{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+
+}
+.contacts__link{
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease-in-out;
+
+}
+.contacts__link:hover,.contacts__link:focus{
+    color: #357ece;
+
+
+}
+.contacts svg{
+    width: 45px;
+    height: 45px;
+    margin-right: 20px;
+    fill: currentColor;
+}
+.contacts__link:hover .contacts svg{
+    color: #357ece;
+
 }
