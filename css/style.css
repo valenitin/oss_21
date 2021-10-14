@@ -1,9 +1,11 @@
-/*#357ece*/
+
 
 body{
     font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
+    font-size: 20px;
     line-height: 1.2;
+    color: #1b1b1b;
+    background-color: #f2f2f2;
 }
 .wrapper {
     display: -webkit-box;
@@ -29,8 +31,8 @@ header  {
     z-index: 2;
 }
 .nav{
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     font-size: 25px;
     display: flex;
     justify-content: space-between;
@@ -59,6 +61,8 @@ header  {
     color: #1b1b1b;
     transition: color 0.3s ease-in-out;
 }
+
+/*hero*/
 .hero{
     position: relative;
     z-index: 0;
@@ -78,11 +82,11 @@ header  {
     height: 225px;
     transform: rotate(
             -3deg);
-    background-color: #fff;
+    background-color: #f2f2f2;
 }
 .hero__welcome{
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     left: 150px;
     font-size: 80px;
     font-weight: 700;
@@ -95,3 +99,19 @@ header  {
     color: #fff;
 }
 
+/*about*/
+.about{
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+.about__title{
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #357ece;
+
+}
+
+.about__text + .about__text{
+    margin-top: 8px;
+}
