@@ -1,0 +1,8 @@
+p {
+  color: blue;
+  opacity: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 2;
+      flex-basis: 2;
+}
