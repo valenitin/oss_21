@@ -1,0 +1,32 @@
+{
+  "name": "grunt_test",
+  "version": "1.0.0",
+  "description": "grunt_test",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lenatardis/grunt_test.git"
+  },
+  "keywords": [
+    "grunt_test"
+  ],
+  "author": "olena",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/lenatardis/grunt_test/issues"
+  },
+  "homepage": "https://github.com/lenatardis/grunt_test#readme",
+  "devDependencies": {
+    "grunt": "^1.4.1",
+    "grunt-contrib-jshint": "^3.1.1",
+    "grunt-contrib-less": "^3.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-html": "^15.1.0"
+  },
+  "dependencies": {
+    "grunt-contrib-uglify": "^5.0.1"
+  }
+}
