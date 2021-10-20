@@ -178,35 +178,36 @@ footer .container {
 .contact-block a {
     display: block;
     position: relative;
+    padding-left: 25px;
 }
 
 .contact-block a:before {
     position: absolute;
-    content: '';
     left: 0;
+    top:0
 }
 
 .contact-block__phone {
     margin-bottom: 20px;
-    padding-left: 26px;
-}
 
-.contact-block__email {
-    padding-left: 27px;
 }
 
 .contact-block__phone:before {
-    width: 21px;
+    font-family:'icomoon', sans-serif;
+    content:'\e942';
+    color:#555555;
+    /*width: 21px;
     height: 21px;
-    top: 0;
-    background: url('../images/Layer 32.png') left top no-repeat;
+    background: url('../images/Layer 32.png') left top no-repeat;*/
 }
 
 .contact-block__email:before {
-    width: 22px;
+    font-family:'icomoon', sans-serif;
+    content:'\e945';
+    color:#555555;
+   /* width: 22px;
     height: 16px;
-    top: 3px;
-    background: url('../images/Layer 34.png') left top no-repeat;
+    background: url('../images/Layer 34.png') left top no-repeat;*/
 }
 
 @media screen and (max-width: 768px) {
@@ -238,6 +239,8 @@ footer .container {
         padding-bottom: 10px;
     }
 }
+
+
 
 
 

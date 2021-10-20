@@ -44,4 +44,5 @@
 !/var/package/*.xml
 
 .idea/
+node_modules
 
