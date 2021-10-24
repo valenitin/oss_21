@@ -176,8 +176,10 @@ a {
 }
 .header {
   padding-top: 11px;
+  padding-bottom: 14px;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid #E7EAED;
 }
 .header .logo {
   margin-left: 20px;
@@ -211,7 +213,7 @@ a {
 }
 .header .select-shop__list {
   width: 195px;
-  padding: 13px 37px 13px 15px;
+  padding: 15px 35px 13px 15px;
   font-size: 12px;
   line-height: 1.16;
   text-align: center;
@@ -310,5 +312,106 @@ a {
   height: 40px;
   border: 1px solid #E7EAED;
   border-radius: 100px;
+}
+.nav-sections {
+  padding: 12px 0 15px 54px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #E7EAED;
+}
+.nav-sections__item--right {
+  display: flex;
+  align-items: center;
+}
+.nav-sections__link {
+  position: relative;
+  margin-right: 30px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.nav-sections__link::after {
+  content: '';
+  position: absolute;
+  top: -17px;
+  right: -30px;
+  height: 54px;
+  width: 1px;
+  background-color: #E7EAED;
+}
+.nav-sections__select-wrapper {
+  position: relative;
+  width: 93px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.nav-sections__select-wrapper:after {
+  content: '';
+  position: absolute;
+  top: 57%;
+  right: 29px;
+  transform: translateY(-50%);
+  background-image: url(../img/arrow-down.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 11px;
+  height: 7px;
+  pointer-events: none;
+}
+.nav-sections__select {
+  line-height: 1.172;
+  font-weight: 600;
+  position: relative;
+  border: none;
+  outline: none;
+  background: transparent;
+  overflow: hidden;
+  padding: 0 30px;
+  appearance: none;
+}
+.nav__list {
+  display: flex;
+  align-items: center;
+}
+.nav__list li {
+  display: block;
+}
+.nav__list li:nth-child(2) {
+  margin-left: 34px;
+}
+.nav__list li:nth-child(3) {
+  margin-left: 27px;
+}
+.nav__list li:nth-child(4) {
+  margin-left: 28px;
+}
+.nav__list li:nth-child(5) {
+  margin-left: 44px;
+}
+.nav__list li:nth-child(2) .navigation__link {
+  border: 2px solid #F53E02;
+  border-radius: 4px;
+  color: #F53E02;
+  padding: 5px 7px;
+}
+.nav__list li:nth-child(3) .navigation__link {
+  border: 2px solid #0085FF;
+  border-radius: 4px;
+  color: #0085FF;
+  padding: 5px 11px;
+}
+.nav__first-item-name {
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+.nav__first-item-name svg {
+  margin-right: 14px;
+}
+.nav .navigation__link {
+  font-size: 14px;
+  font-weight: 700;
 }
 /*# sourceMappingURL=style.css.map */
