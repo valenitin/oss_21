@@ -9,6 +9,7 @@
     padding: 30px 20px 0;
   }
 
+  /*check mobile version*/
  .header.content{
     box-sizing: border-box;
     margin-left: auto;
@@ -22,4 +23,42 @@
    border:0;
    margin-bottom: 0;
  }
+  .logo {
+    margin: -8px auto 25px 0;
+  }
+  .logo img {
+    max-height: inherit;
+  }
+  .block-search {
+    float: right;
+    padding-left: 15px;
+    position: relative;
+    width: 250px;
+    z-index: 4;
+  }
+  .block-search .label{
+    border: 0;
+    clip: rect(0,0,0,0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header.content{
+    padding-left:15px;
+    padding-right:15px;
+    padding-top:10px;
+  }
+  .logo {
+    margin-bottom: 13px;
+    margin-top: 4px;
+  }
+  .block-search {
+    margin-top: 10px;
+  }
 }
