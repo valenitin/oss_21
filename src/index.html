@@ -7,52 +7,150 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div class="wrapper">
-        <header class="header">
-            <div class="container">
-                <div class="header__content">
-                    <a class="header__logo" href="#"><img src="./img/logo.svg" alt="logo" width="147" height="58"></a>
-                    <div class="header__select-wrapper select-shop">
-                        <select class="select-shop__list">
-                            <option class="select-shop__item">Changer de boutique</option>
-                            <option class="select-shop__item">Changer de boutique</option>
-                            <option class="select-shop__item">Changer de boutique</option>
-                        </select>
-                    </div>
-                    <div class="header__search search-box">
-                        <input class="search-box__input" type="text" name="s" placeholder="Rechecher un produit, référence"  maxlength="128" role="combobox"  autocomplete="off" >
-                    </div>
-                    <div class="header__panel panel">
-                        <a href="#" class="panel__profil">
-                            <span class="panel__text">Mon profil</span>
-                            <span class="panel__icon">
-                                <svg width="14" height="15">
-                                <use href="./img/icons.svg#icon-profil"></use>
-                            </svg>
-                            </span>
-                        </a>
-                        <a href="#" class="panel__cart">
-                            <span class="panel__text">Mon panier</span>
-                            <span class="panel__icon">
-                                <svg  width="14" height="14">
-                                <use href="./img/icons.svg#icon-cart"></use>
-                            </svg>
-                            </span>
-                        </a>
+<div class="page-wrapper">
+    <header class="page-header">
+        <div class="header content">
+            <span data-action="toggle-nav" class="action nav-toggle">
+                <span>Toggle Nav</span>
+            </span>
+            <a class="logo" href="" title="" aria-label="store logo">
+                <img src="./img/logo.svg" title="" alt="" width="147">
+            </a>
+            <div class="header__select-wrapper select-shop">
+                <select class="select-shop__list">
+                    <option class="select-shop__item">Changer de boutique</option>
+                    <option class="select-shop__item">Changer de boutique</option>
+                    <option class="select-shop__item">Changer de boutique</option>
+                </select>
+            </div>
+            <div class="block block-search">
+                <div class="block block-title"><strong>Search</strong></div>
+                <div class="block block-content">
+                    <form class="form minisearch" id="search_mini_form"
+                          action="" method="get">
+                        <div class="field search">
+                            <label class="label" for="search" data-role="minisearch-label">
+                                <span>Search</span>
+                            </label>
+                            <div class="control">
+                                <input id="search" type="text" name="q" value=""
+                                       placeholder="Rechecher un produit, référence" class="input-text" maxlength="128"
+                                       role="combobox" aria-haspopup="false" aria-autocomplete="both" autocomplete="off"
+                                       aria-expanded="false">
+                                <div id="search_autocomplete" class="search-autocomplete"></div>
+                                <div class="nested">
+                                    <a class="action advanced"
+                                       href="https://magento2.demo.ubertheme.com/index.php/catalogsearch/advanced/"
+                                       data-action="advanced-search">
+                                        Advanced Search </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <button disabled type="submit" title="Search" class="action search" aria-label="Search" >
+
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div data-block="profil " class="profil-wrapper">
+                <a class="action showprofil" href="">
+
+                    <span class="text">Mon profil</span>
+                    <span class="icon"> <svg width="14" height="15" >
+                        <use href="./img/icons.svg#icon-profil" ></use>
+                    </svg></span>
+
+                </a>
+
+            </div>
+            <div data-block="minicart " class="minicart-wrapper">
+                <a class="action showcart" href=""
+                   data-bind="scope: 'minicart_content'">
+
+                    <span class="text">Mon panier</span>
+                    <span class="icon"><svg  width="14" height="14">
+                        <use href="./img/icons.svg#icon-cart"></use>
+                    </svg></span>
+                    <span class="counter qty empty"
+                          data-bind="css: { empty: !!getCartParam('summary_count') == false &amp;&amp; !isLoading() },
+               blockLoader: isLoading">10
+            <span class="counter-number"><!-- ko text: getCartParam('summary_count') --><!-- /ko --></span>
+            <span class="counter-label">
+            <!-- ko if: getCartParam('summary_count') --><!-- /ko -->
+            </span>
+        </span>
+                </a>
+
+                <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front mage-dropdown-dialog"
+                     tabindex="-1" role="dialog" aria-describedby="ui-id-1" style="display: none;">
+                    <div class="block block-minicart ui-dialog-content ui-widget-content" data-role="dropdownDialog"
+                         style="display: block;">
+                        <div  data-bind="scope: 'minicart_content'">
+                            <!-- ko template: getTemplate() -->
+                            <div class="block-title">
+                                <strong>
+                                    <span class="text" data-bind="i18n: 'My Cart'">My Cart</span>
+                                    <span class="qty empty" data-bind="css: { empty: !!getCartParam('summary_count') == false },
+                       attr: { title: $t('Items in Cart') }, text: getCartParam('summary_count')"
+                                          title="Items in Cart"></span>
+                                </strong>
+                            </div>
+
+                            <div class="block-content">
+                                <button type="button"  class="action close" data-action="close"
+                                        data-bind="attr: { title: $t('Close') }" title="Close">
+                                    <span data-bind="i18n: 'Close'">Close</span>
+                                </button>
+
+                                <!-- ko if: getCartParam('summary_count') --><!-- /ko -->
+
+                                <!-- ko if: getCartParam('summary_count') --><!-- /ko -->
+
+                                <!-- ko ifnot: getCartParam('summary_count') -->
+                                <strong class="subtitle empty"
+                                        data-bind="visible: closeSidebar(), i18n: 'You have no items in your shopping cart.'">You
+                                    have no items in your shopping cart.</strong>
+                                <!-- ko if: getCartParam('cart_empty_message') --><!-- /ko -->
+                                <!-- /ko -->
+
+                                <!-- ko if: getCartParam('summary_count') --><!-- /ko -->
+
+                                <!-- ko if: regionHasElements('promotion') -->
+                                <div id="minicart-widgets" class="minicart-widgets">
+                                    <!-- ko foreach: getRegion('promotion') --><!-- ko template: getTemplate() -->
+                                    <!-- ko foreach: {data: elems, as: 'element'} --><!-- /ko -->
+                                    <!-- /ko --><!-- /ko -->
+                                </div><!-- /ko -->
+                            </div>
+                            <!-- ko foreach: getRegion('sign-in-popup') --><!-- /ko -->
+                            <!-- /ko -->
+                        </div>
                     </div>
                 </div>
-                <div class="nav-section"></div>
             </div>
-        </header>
-        <main class="main"></main>
-        <footer class="footer"></footer>
-    </div>
 
-<!--    <script src="./js/slick.js" type="text/javascript" ></script>-->
+
+
+            <ul class="compare wrapper">
+                <li class="item link compare" data-bind="scope: 'compareProducts'" data-role="compare-products-link">
+                    <a class="action compare no-display" title="Compare Products"
+                       data-bind="attr: {'href': compareProducts().listUrl}, css: {'no-display': !compareProducts().count}">
+                        Compare Products <span class="counter qty"
+                                               data-bind="text: compareProducts().countCaption"></span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </header>
+
+</div>
 </body>
 </html>
