@@ -1,18 +1,11 @@
-console.log('kek')
-const a = 5;
-
-console.log('kek')
-const a = 5;
-
-console.log('kek')
-const a = 5;
-
-console.log('kek')
-const a = 5;
-
-console.log('kek')
-const a = 5;
-const b = 3;
-console.log('kek')
-const a = 5;
-const b = 3;
+$(document).ready(function(){
+    $('.hero__slick').slick({
+        arrows:false,
+        dots: true,
+        pauseOnHover:true,
+        dotsClass:'hero__dots',
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    });
+});

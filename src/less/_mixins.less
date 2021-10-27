@@ -35,3 +35,41 @@
   color: @color;
   padding:@padding ;
 }
+
+.hero-product-template(){
+  &+&{
+    margin-top: 20px;
+  }
+  max-width: 330px;
+  display: flex;
+  align-items: center;
+  padding-top: 13px;
+  padding-bottom: 14px;
+  background-color: @main-white;
+  border-radius: 10px;
+  &__img{
+    display: block;
+    margin-left: 16px;
+  }
+  &__product-text-block{
+    margin-left: 24px;
+    display: flex;
+    flex-direction: column;
+
+  }
+  &__product-price{
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.57;
+    color: #171717;
+  }
+  &__product-name{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.12;
+  }
+  &__arrow{
+    margin-left: 32px;
+  }
+}

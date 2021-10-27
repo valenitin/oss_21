@@ -1,0 +1,155 @@
+.hero {
+  position: relative;
+
+  &__dots {
+    position: absolute;
+    bottom: 33px;
+    left: 655px;
+    display: flex;
+  }
+
+  &__dots li {
+    position: relative;
+    margin-left: 19px;
+    z-index: 2;
+  }
+
+  &__dots button {
+
+    display: block;
+    background: @main-white;
+    border: none;
+    padding: 0;
+    font-size: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+
+  }
+
+  &__dots .slick-active:before {
+    content: '';
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    z-index: -1;
+    background-color: #B40000;
+    border-radius: 50%;
+  }
+
+  &__appeal {
+    padding-left: 100px;
+  }
+
+  &__category {
+    max-width: 127px;
+    margin-top: 71px;
+    margin-bottom: 17px;
+    font-size: 12px;
+    line-height: 1.25;
+    font-weight: 700;
+    padding: 5px 14px;
+    border: 1px solid @main-white;
+    border-radius: 43px;
+    background-color: @main-white;
+  }
+
+  &__title {
+    max-width: 554px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.21;
+    color: @main-white;
+  }
+
+  &__link {
+    max-width: 198px;
+    display: block;
+    font-weight: 700;
+    color: @main-white;
+    border: 2px solid @main-white;
+    border-radius: 10px;
+    padding: 16px 20px;
+    transition: all 0.3s linear;
+    &:hover,&:focus{
+      background: @main-white;
+      color: @main-black;
+    }
+  }
+
+  &__item {
+
+    background: linear-gradient(180deg, #040335 0.32%, rgba(0, 28, 100, 0.55) 100%), url('../img/hero-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 460px;
+  }
+
+  &__item-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__products {
+    padding-right: 100px;
+    padding-top: 75px;
+  }
+
+  &__product {
+    & + & {
+      margin-top: 20px;
+    }
+
+    max-width: 330px;
+    display: flex;
+    align-items: center;
+    padding-top: 13px;
+    padding-bottom: 14px;
+    background-color: @main-white;
+    border-radius: 10px;
+
+  }
+
+  &__img {
+    display: block;
+    margin-left: 16px;
+  }
+
+  &__product-text-block {
+    margin-left: 24px;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  &__product-price {
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.57;
+    color: #171717;
+  }
+
+  &__product-name {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.12;
+  }
+
+  &__arrow {
+    margin-left: 32px;
+    padding-right: 29px;
+    transition: transform 0.1s linear;
+  }
+  &__product:hover &__arrow,
+  &__product:focus &__arrow{
+    transform: translateX(5px);
+
+  }
+}
