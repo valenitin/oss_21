@@ -1,0 +1,236 @@
+.product-block {
+  padding: 70px 100px 140px 100px;
+  background-color: @secondary-section-color;
+  &__head{
+    padding-bottom: 43px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .block-title {
+    strong {
+      font-weight: 700;
+      font-size: 36px;
+    }
+  }
+
+  .product-item {
+
+    padding: 40px 46px 44px 45px;
+    max-width: 599px;
+    border: 1px solid #E7EAED;
+    box-shadow: 0px 4px 54px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    background-color: @main-white;
+  }
+
+  .product-item-photo {
+    max-width: 196px;
+    margin-top: 3px;
+    margin-right: 80px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .product-item-info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .product-item-details {
+    max-width: 230px;
+  }
+
+  .product-item-ref {
+    padding-bottom: 3px;
+
+    strong {
+      font-weight: 400;
+      color: #828282;
+      font-size: 12px;
+      line-height: 1.67;
+    }
+  }
+
+  .product-item-name {
+    display: block;
+    padding-bottom: 7px;
+
+    a {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.25;
+    }
+  }
+
+  .product-reviews-summary {
+    display: flex;
+    padding-bottom: 18px;
+
+  }
+
+  .reviews-actions {
+    padding-left: 52px;
+
+    a {
+      text-decoration: underline;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.43;
+    }
+  }
+
+  .rating-result {
+    position: relative;
+
+    &:before {
+
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+      -webkit-font-smoothing: antialiased;
+      color: #c7c7c7;
+      font-family: 'luma-icons';
+      font-size: 16px;
+      height: 16px;
+      letter-spacing: 2px;
+      line-height: 16px;
+      content: '\e605' '\e605' '\e605' '\e605' '\e605';
+      display: block;
+      font-style: normal;
+      font-weight: 400;
+      speak: none;
+    }
+  }
+
+  .rating-result > span {
+    &:before {
+      position: relative;
+      z-index: 2;
+      -webkit-font-smoothing: antialiased;
+      color: #FFB000;
+      font-family: 'luma-icons';
+      font-size: 16px;
+      height: 16px;
+      letter-spacing: 2px;
+      line-height: 16px;
+      content: '\e605' '\e605' '\e605';
+      display: block;
+      font-style: normal;
+      font-weight: 400;
+      speak: none;
+    }
+  }
+
+  .rating-summary {
+    display: flex;
+  }
+
+  .rating-summary .label span, .rating-percent {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+
+
+  }
+
+  .normal-price {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .price-label {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.43;
+    padding-bottom: 5px;
+    display: block;
+  }
+
+
+  .price-inner {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 6px;
+  }
+
+  .price {
+    color: #171717;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 0.89;
+    display: block;
+
+    &--red {
+      color: @main-red;
+      padding-bottom: 10px;
+    }
+
+  }
+
+  .price-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .price-discount {
+    margin-top: 5px;
+    max-height: 35px;
+    padding: 7px 6px;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.21;
+    color: @main-red;
+    border: 2px solid currentColor;
+
+    border-radius: 5px;
+  }
+
+  .price-descr {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.21;
+    color: #828282;
+
+    span {
+      text-decoration: line-through;
+    }
+  }
+
+}
+
+.product-slider {
+  .slick-list {
+    margin: 0 -40px;
+  }
+
+  .slick-slide > div {
+    padding: 0 40px;
+  }
+  .slick-slide:nth-child(even) > div{
+    padding: 0 3px;
+  }
+  .products__dots{
+    .dots(-78px,559px,@main-white,#C4C4C4,@main-red);
+  }
+
+    .slider-arrows>span {
+      font-size: 20px;
+      display: block;
+      width: 50px;
+      height: 50px;
+      border: 2px solid #0F171F;
+      border-radius: 80px;
+    }
+
+}

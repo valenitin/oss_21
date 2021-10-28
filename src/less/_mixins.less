@@ -72,4 +72,49 @@
   &__arrow{
     margin-left: 32px;
   }
+
+}
+
+.dots(@bottom,@left,@color-active,@color-inactive,@color-accent){
+    position: absolute;
+    bottom: @bottom;
+    left: @left;
+    display: flex;
+
+
+  & li {
+    position: relative;
+    margin-left: 19px;
+    z-index: 2;
+  }
+
+  & button {
+    display: block;
+    background: @color-inactive;
+    border: none;
+    padding: 0;
+    font-size: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+
+  }
+
+  & .slick-active{
+  &:before {
+    content: '';
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    z-index: -1;
+    background-color: @color-accent;
+    border-radius: 50%;
+  }}
+  & .slick-active button{
+    background-color: @color-active;
+  }
 }
