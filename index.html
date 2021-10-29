@@ -8,9 +8,8 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width">
     <link type="text/css" rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700|Roboto&amp;subset=cyrillic"
-          rel="stylesheet">
-    <!--<link href="fonts/icomoon/style.css" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="fonts/icomoon/style.css" rel="stylesheet">
 </head>
 <body data-container="body"
       data-mage-init='{"loaderAjax": {}, "loader": { "icon": "https://magento2.demo.ubertheme.com/static/version1602845019/frontend/Magento/luma/en_US/images/loader-2.gif"}}'
@@ -18,33 +17,23 @@
 <div class="page-wrapper">
     <header class="page-header">
         <div class="header content">
-            <a class="logo" href="https://magento2.demo.ubertheme.com/index.php/" title="" aria-label="store logo">
-                <img src="https://magento2.demo.ubertheme.com/static/version1602845019/frontend/Magento/luma/en_US/images/logo.svg" title="" alt="" width="170"/>
+            <a class="logo" href="#" title="" aria-label="store logo">
+                <img src="images/logos/Logo%20jeulin.svg" title="" alt="" width=""/>
             </a>
-            <div class="switcher currency switcher-currency" id="switcher-currency">
-                <strong class="label switcher-label"><span>Currency</span></strong>
-                <div class="actions dropdown options switcher-options">
-                    <div class="action toggle switcher-trigger"
-                         id="switcher-currency-trigger"
-                         data-mage-init='{"dropdown":{}}'
-                         data-toggle="dropdown"
-                         data-trigger-keypress-button="true">
-                        <strong class="language-USD">
-                            <span>USD - US Dollar</span>
-                        </strong>
-                    </div>
-                    <ul class="dropdown switcher-dropdown" data-target="dropdown">
-                        <li class="currency-EUR switcher-option">
-                            <a href="#" data-post='{"action":"https:\/\/magento2.demo.ubertheme.com\/index.php\/directory\/currency\/switch\/","data":{"currency":"EUR","uenc":"aHR0cHM6Ly9tYWdlbnRvMi5kZW1vLnViZXJ0aGVtZS5jb20v"}}'>EUR - Euro</a>
-                        </li>
-                    </ul>
+            <form class="form page-header__form minisearch" id="search_mini_form"
+                  action="https://magento2.demo.ubertheme.com/index.php/catalogsearch/result/" method="get">
+                <div class="block-select">
+                    <label>
+                        <select class="page-header__store-select" name="store">
+                            <option value="store1">Store 1</option>
+                            <option value="store2">Store 2</option>
+                            <option value="store3">Store 3</option>
+                        </select>
+                    </label>
                 </div>
-            </div>
-            <div class="block block-search">
-                <div class="block block-title"><strong>Search</strong></div>
-                <div class="block block-content">
-                    <form class="form minisearch" id="search_mini_form"
-                          action="https://magento2.demo.ubertheme.com/index.php/catalogsearch/result/" method="get">
+                <div class="block block-search">
+                    <div class="block block-title"><strong>Search</strong></div>
+                    <div class="block block-content">
                         <div class="field search">
                             <label class="label" for="search" data-role="minisearch-label">
                                 <span>Search</span>
@@ -60,7 +49,7 @@
                                        type="text"
                                        name="q"
                                        value=""
-                                       placeholder="Search&#x20;entire&#x20;store&#x20;here..."
+                                       placeholder="Rechecher un produit, référence"
                                        class="input-text"
                                        maxlength="128"
                                        role="combobox"
@@ -68,10 +57,13 @@
                                        aria-autocomplete="both"
                                        autocomplete="off"
                                        aria-expanded="false"/>
+                                <button type="submit" class="block-search__submit-btn icon-Search"></button>
                                 <div id="search_autocomplete" class="search-autocomplete"></div>
                                 <div class="nested">
-                                    <a class="action advanced" href="https://magento2.demo.ubertheme.com/index.php/catalogsearch/advanced/" data-action="advanced-search">
-                                        Advanced Search    </a>
+                                    <a class="action advanced"
+                                       href="https://magento2.demo.ubertheme.com/index.php/catalogsearch/advanced/"
+                                       data-action="advanced-search">
+                                        Advanced Search </a>
                                 </div>
                             </div>
                         </div>
@@ -84,12 +76,24 @@
                                 <span>Search</span>
                             </button>
                         </div>
-                    </form>
+                    </div>
                 </div>
+            </form>
+            <div class="profile">
+                <a href="#" title="profile">
+                    <span>Mon profil</span>
+                    <span class="circle icon-profile"></span>
+                </a>
             </div>
             <div data-block="minicart" class="minicart-wrapper">
                 <a class="action showcart" href="https://magento2.demo.ubertheme.com/index.php/checkout/cart/"
                    data-bind="scope: 'minicart_content'">
+                    <span>Mon panier</span>
+                    <span class="circle icon-cart">
+                        <span class="circle__count">
+                            <span>10</span>
+                        </span>
+                    </span>
                     <span class="text">My Cart</span>
                     <span class="counter qty empty"
                           data-bind="css: { empty: !!getCartParam('summary_count') == false && !isLoading() },
@@ -118,7 +122,33 @@
                         <!-- ko template: getTemplate() --><!-- /ko -->
                     </div>
                 </div>
-                <script>window.checkout = {"shoppingCartUrl":"https:\/\/magento2.demo.ubertheme.com\/index.php\/checkout\/cart\/","checkoutUrl":"https:\/\/magento2.demo.ubertheme.com\/index.php\/checkout\/","updateItemQtyUrl":"https:\/\/magento2.demo.ubertheme.com\/index.php\/checkout\/sidebar\/updateItemQty\/","removeItemUrl":"https:\/\/magento2.demo.ubertheme.com\/index.php\/checkout\/sidebar\/removeItem\/","imageTemplate":"Magento_Catalog\/product\/image_with_borders","baseUrl":"https:\/\/magento2.demo.ubertheme.com\/index.php\/","minicartMaxItemsVisible":5,"websiteId":"1","maxItemsToDisplay":10,"storeId":"1","storeGroupId":"1","customerLoginUrl":"https:\/\/magento2.demo.ubertheme.com\/index.php\/customer\/account\/login\/referer\/aHR0cHM6Ly9tYWdlbnRvMi5kZW1vLnViZXJ0aGVtZS5jb20vaW5kZXgucGhwLw%2C%2C\/","isRedirectRequired":false,"autocomplete":"off","captcha":{"user_login":{"isCaseSensitive":false,"imageHeight":50,"imageSrc":"","refreshUrl":"https:\/\/magento2.demo.ubertheme.com\/index.php\/captcha\/refresh\/","isRequired":false,"timestamp":1635013499}}}</script>    <script type="text/x-magento-init">
+                <script>window.checkout = {
+                    "shoppingCartUrl": "https:\/\/magento2.demo.ubertheme.com\/index.php\/checkout\/cart\/",
+                    "checkoutUrl": "https:\/\/magento2.demo.ubertheme.com\/index.php\/checkout\/",
+                    "updateItemQtyUrl": "https:\/\/magento2.demo.ubertheme.com\/index.php\/checkout\/sidebar\/updateItemQty\/",
+                    "removeItemUrl": "https:\/\/magento2.demo.ubertheme.com\/index.php\/checkout\/sidebar\/removeItem\/",
+                    "imageTemplate": "Magento_Catalog\/product\/image_with_borders",
+                    "baseUrl": "https:\/\/magento2.demo.ubertheme.com\/index.php\/",
+                    "minicartMaxItemsVisible": 5,
+                    "websiteId": "1",
+                    "maxItemsToDisplay": 10,
+                    "storeId": "1",
+                    "storeGroupId": "1",
+                    "customerLoginUrl": "https:\/\/magento2.demo.ubertheme.com\/index.php\/customer\/account\/login\/referer\/aHR0cHM6Ly9tYWdlbnRvMi5kZW1vLnViZXJ0aGVtZS5jb20vaW5kZXgucGhwLw%2C%2C\/",
+                    "isRedirectRequired": false,
+                    "autocomplete": "off",
+                    "captcha": {
+                        "user_login": {
+                            "isCaseSensitive": false,
+                            "imageHeight": 50,
+                            "imageSrc": "",
+                            "refreshUrl": "https:\/\/magento2.demo.ubertheme.com\/index.php\/captcha\/refresh\/",
+                            "isRequired": false,
+                            "timestamp": 1635013499
+                        }
+                    }
+                }</script>
+                <script type="text/x-magento-init">
     {
         "[data-block='minicart']": {
             "Magento_Ui/js/core/app": {"components":{"minicart_content":{"children":{"subtotal.container":{"children":{"subtotal":{"children":{"subtotal.totals":{"config":{"display_cart_subtotal_incl_tax":0,"display_cart_subtotal_excl_tax":1,"template":"Magento_Tax\/checkout\/minicart\/subtotal\/totals"},"children":{"subtotal.totals.msrp":{"component":"Magento_Msrp\/js\/view\/checkout\/minicart\/subtotal\/totals","config":{"displayArea":"minicart-subtotal-hidden","template":"Magento_Msrp\/checkout\/minicart\/subtotal\/totals"}}},"component":"Magento_Tax\/js\/view\/checkout\/minicart\/subtotal\/totals"}},"component":"uiComponent","config":{"template":"Magento_Checkout\/minicart\/subtotal"}}},"component":"uiComponent","config":{"displayArea":"subtotalContainer"}},"item.renderer":{"component":"uiComponent","config":{"displayArea":"defaultRenderer","template":"Magento_Checkout\/minicart\/item\/default"},"children":{"item.image":{"component":"Magento_Catalog\/js\/view\/image","config":{"template":"Magento_Catalog\/product\/image","displayArea":"itemImage"}},"checkout.cart.item.price.sidebar":{"component":"uiComponent","config":{"template":"Magento_Checkout\/minicart\/item\/price","displayArea":"priceSidebar"}}}},"extra_info":{"component":"uiComponent","config":{"displayArea":"extraInfo"}},"promotion":{"component":"uiComponent","config":{"displayArea":"promotion"}}},"config":{"itemRenderer":{"default":"defaultRenderer","simple":"defaultRenderer","virtual":"defaultRenderer"},"template":"Magento_Checkout\/minicart\/content"},"component":"Magento_Checkout\/js\/view\/minicart"}},"types":[]}        },
@@ -126,12 +156,823 @@
             "Magento_Ui/js/block-loader": "https\u003A\u002F\u002Fmagento2.demo.ubertheme.com\u002Fstatic\u002Fversion1602845019\u002Ffrontend\u002FMagento\u002Fluma\u002Fen_US\u002Fimages\u002Floader\u002D1.gif"
         }
     }
-    </script>
+
+
+
+
+
+                </script>
             </div>
         </div>
+        <!--  <div class="sections nav-sections">
+              <div class="switcher currency switcher-currency" id="switcher-currency">
+                  <strong class="label switcher-label"><span>Currency</span></strong>
+                  <div class="actions dropdown options switcher-options">
+                      <div class="action toggle switcher-trigger"
+                           id="switcher-currency-trigger"
+                           data-mage-init='{"dropdown":{}}'
+                           data-toggle="dropdown"
+                           data-trigger-keypress-button="true">
+                          <strong class="language-USD">
+                              <span>USD - US Dollar</span>
+                          </strong>
+                      </div>
+                      <ul class="dropdown switcher-dropdown" data-target="dropdown">
+                          <li class="currency-EUR switcher-option">
+                              <a href="#"
+                                 data-post='{"action":"https:\/\/magento2.demo.ubertheme.com\/index.php\/directory\/currency\/switch\/","data":{"currency":"EUR","uenc":"aHR0cHM6Ly9tYWdlbnRvMi5kZW1vLnViZXJ0aGVtZS5jb20v"}}'>EUR
+                                  - Euro</a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>-->
     </header>
+    <div class="block ub-content-slider slider-item fullwidth no-title fullwidth-slider-block"
+         data-layout-mode="inside">
+        <div class="block-content hero-slider"
+             dir="auto"
+             data-mage-init='{"ubSlick": {"enable":"1","show_title":"0","title":"UB Content Slider","content_type":"slider","slider_id":"8","slider_key":null,"category_ids":null,"sort_by":"created_at","sort_dir":"ASC","from_date":null,"to_date":null,"qty":"10","item_width":"1920","item_height":"460","show_item_title":"0","show_item_desc":"1","thumb_width":"0","thumb_height":"0","show_name":"1","show_price":"1","show_desc":"1","desc_length":"100","show_review":"1","show_wishlist":"1","show_compare":"1","show_add_cart":"1","show_readmore":"1","js_lib":"slick","single_item":"1","number_items":"5","number_items_desktop":"5","number_items_desktop_small":"4","number_items_tablet":"3","number_items_tablet_small":"2","number_items_mobile":"1","auto_height":"1","auto_run":"1","slide_speed":"3000","stop_on_hover":"1","show_navigation":"1","infinite":"1","navigation_text":["Prev","Next"],"show_paging":"1","enable_lazyload":"1","slide_transition":"fade","addition_class":"fullwidth","template":null,"rows":"1","items_per_row":"1","items_to_scroll":"1","variable_width":"0","vertical":"0","center_mode":"0","start_pos":"1","enable_rtl":"0","pause_on_focus":"1","pause_on_dots_hover":"1","paging_numbers":"1","show_processbar":"0","device":"desktop","attributesToSelect":["size","name","short_description","price","special_price","special_from_date","special_to_date","image","small_image","thumbnail","color","news_from_date","news_to_date","status","required_options","image_label","small_image_label","thumbnail_label","price_type","weight_type","price_view","shipment_type","msrp","msrp_display_actual_price_type","url_key","links_purchased_separately","links_exist","tax_class_id","swatch_image","is_hot"]}}'
+        >
+            <div class="item content-to-left" style="width:1920px; height:460px">
+                <div class="slide-content">
+                    <a href="#"
+                       class="media image"
+                       target="_blank"
+                       data-video-id=""
+                       data-video-width="1920px"
+                       data-video-height="460px">
+                        <img
+                                class="slide-image"
+                                data-lazy="images/physique_bg.jpg"
+                                alt="When someone else’s <br/>happiness is your happiness, that is love"
+                        />
+                    </a>
+                    <!-- Hotspots markup -->
+                    <!--// Hotspots markup -->
+                </div>
+                <div class="slide-content-desc">
+                    <div class="slide-desc">
+                        <div class="slide-desc__inner-block">
+                            <a class="slide-desc__introduction">Physique chimie</a>
+                            <div class="title">L’optique physique :<br/>
+                                une discipline à mettre<br/>
+                                en pratique
+                            </div>
+                            <a class="readmore" href="#" target="_blank" tabindex="-1">Découvrir nos articles </a>
+                        </div>
+                        <div class="slide-desc__inner-block slide-desc__inner-block-right">
+                            <a href="#">
+                                <img src="images/physique1.jpg" alt="physique1">
+                                <span>
+                                    <span class="slide-desc__partir">A partir de 43€ </span>
+                                    <span>Sons et ultrasons</span>
+                                </span>
+                                <span class="icon-arrow_right_big"></span>
+                            </a>
+                            <a href="#">
+                                <img src="images/physique2.jpg" alt="physique1">
+                                <span>
+                                    <span class="slide-desc__partir">A partir de 43€</span>
+                                    <span>Sons et ultrasons</span></span>
+                                <span class="icon-arrow_right_big"></span>
+                            </a>
+                            <a href="#">
+                                <img src="images/physique3.jpg" alt="physique1">
+                                <span>
+                                    <span class="slide-desc__partir">A partir de 43€</span>
+                                    <span>Sons et ultrasons</span>
+                                </span>
+                                <span class="icon-arrow_right_big"></span>
+                            </a>
+                        </div>
 
+                    </div>
+                    <a class="slide-readmore"
+                       href="#"
+                       target="_blank">
+                        View More </a>
+                </div>
+            </div>
+            <div class="item content-to-left" style="width:1920px; height:460px">
+                <div class="slide-content">
+                    <a href="#"
+                       class="media image"
+                       target="_blank"
+                       data-video-id=""
+                       data-video-width="1920px"
+                       data-video-height="460px">
+                        <img
+                                class="slide-image"
+                                data-lazy="images/physique_bg.jpg"
+                                alt="When someone else’s <br/>happiness is your happiness, that is love"
+                        />
+                    </a>
+                    <!-- Hotspots markup -->
+                    <!--// Hotspots markup -->
+                </div>
+                <div class="slide-content-desc">
+                    <div class="slide-desc">
+                        <div class="slide-desc__inner-block">
+                            <a class="slide-desc__introduction">Physique chimie</a>
+                            <div class="title">L’optique physique :<br/>
+                                une discipline à mettre<br/>
+                                en pratique
+                            </div>
+                            <a class="readmore" href="#" target="_blank" tabindex="-1">Découvrir nos articles </a>
+                        </div>
+                        <div class="slide-desc__inner-block slide-desc__inner-block-right">
+                            <a href="#">
+                                <img src="images/physique1.jpg" alt="physique1">
+                                <span>
+                                    <span class="slide-desc__partir">A partir de 43€ </span>
+                                    <span>Sons et ultrasons</span>
+                                </span>
+                                <span class="icon-arrow_right_big"></span>
+                            </a>
+                            <a href="#">
+                                <img src="images/physique2.jpg" alt="physique1">
+                                <span>
+                                    <span class="slide-desc__partir">A partir de 43€</span>
+                                    <span>Sons et ultrasons</span></span>
+                                <span class="icon-arrow_right_big"></span>
+                            </a>
+                            <a href="#">
+                                <img src="images/physique3.jpg" alt="physique1">
+                                <span>
+                                    <span class="slide-desc__partir">A partir de 43€</span>
+                                    <span>Sons et ultrasons</span>
+                                </span>
+                                <span class="icon-arrow_right_big"></span>
+                            </a>
+                        </div>
+
+                    </div>
+                    <a class="slide-readmore"
+                       href="#"
+                       target="_blank">
+                        View More </a>
+                </div>
+            </div>
+            <div class="item content-to-left" style="width:1920px; height:460px">
+                <div class="slide-content">
+                    <a href="#"
+                       class="media image"
+                       target="_blank"
+                       data-video-id=""
+                       data-video-width="1920px"
+                       data-video-height="460px">
+                        <img
+                                class="slide-image"
+                                data-lazy="images/physique_bg.jpg"
+                                alt="When someone else’s <br/>happiness is your happiness, that is love"
+                        />
+                    </a>
+                    <!-- Hotspots markup -->
+                    <!--// Hotspots markup -->
+                </div>
+                <div class="slide-content-desc">
+                    <div class="slide-desc">
+                        <div class="slide-desc__inner-block">
+                            <a class="slide-desc__introduction">Physique chimie</a>
+                            <div class="title">L’optique physique :<br/>
+                                une discipline à mettre<br/>
+                                en pratique
+                            </div>
+                            <a class="readmore" href="#" target="_blank" tabindex="-1">Découvrir nos articles </a>
+                        </div>
+                        <div class="slide-desc__inner-block slide-desc__inner-block-right">
+                            <a href="#">
+                                <img src="images/physique1.jpg" alt="physique1">
+                                <span>
+                                    <span class="slide-desc__partir">A partir de 43€ </span>
+                                    <span>Sons et ultrasons</span>
+                                </span>
+                                <span class="icon-arrow_right_big"></span>
+                            </a>
+                            <a href="#">
+                                <img src="images/physique2.jpg" alt="physique1">
+                                <span>
+                                    <span class="slide-desc__partir">A partir de 43€</span>
+                                    <span>Sons et ultrasons</span></span>
+                                <span class="icon-arrow_right_big"></span>
+                            </a>
+                            <a href="#">
+                                <img src="images/physique3.jpg" alt="physique1">
+                                <span>
+                                    <span class="slide-desc__partir">A partir de 43€</span>
+                                    <span>Sons et ultrasons</span>
+                                </span>
+                                <span class="icon-arrow_right_big"></span>
+                            </a>
+                        </div>
+
+                    </div>
+                    <a class="slide-readmore"
+                       href="#"
+                       target="_blank">
+                        View More </a>
+                </div>
+            </div>
+            <div class="item content-to-left" style="width:1920px; height:460px">
+                <div class="slide-content">
+                    <a href="#"
+                       class="media image"
+                       target="_blank"
+                       data-video-id=""
+                       data-video-width="1920px"
+                       data-video-height="460px">
+                        <img
+                                class="slide-image"
+                                data-lazy="images/physique_bg.jpg"
+                                alt="When someone else’s <br/>happiness is your happiness, that is love"
+                        />
+                    </a>
+                    <!-- Hotspots markup -->
+                    <!--// Hotspots markup -->
+                </div>
+                <div class="slide-content-desc">
+                    <div class="slide-desc">
+                        <div class="slide-desc__inner-block">
+                            <a class="slide-desc__introduction">Physique chimie</a>
+                            <div class="title">L’optique physique :<br/>
+                                une discipline à mettre<br/>
+                                en pratique
+                            </div>
+                            <a class="readmore" href="#" target="_blank" tabindex="-1">Découvrir nos articles </a>
+                        </div>
+                        <div class="slide-desc__inner-block slide-desc__inner-block-right">
+                            <a href="#">
+                                <img src="images/physique1.jpg" alt="physique1">
+                                <span>
+                                    <span class="slide-desc__partir">A partir de 43€ </span>
+                                    <span>Sons et ultrasons</span>
+                                </span>
+                                <span class="icon-arrow_right_big"></span>
+                            </a>
+                            <a href="#">
+                                <img src="images/physique2.jpg" alt="physique1">
+                                <span>
+                                    <span class="slide-desc__partir">A partir de 43€</span>
+                                    <span>Sons et ultrasons</span></span>
+                                <span class="icon-arrow_right_big"></span>
+                            </a>
+                            <a href="#">
+                                <img src="images/physique3.jpg" alt="physique1">
+                                <span>
+                                    <span class="slide-desc__partir">A partir de 43€</span>
+                                    <span>Sons et ultrasons</span>
+                                </span>
+                                <span class="icon-arrow_right_big"></span>
+                            </a>
+                        </div>
+
+                    </div>
+                    <a class="slide-readmore"
+                       href="#"
+                       target="_blank">
+                        View More </a>
+                </div>
+            </div>
+
+        </div>
+        <!-- Thumbnail items-->
+        <!--// Thumbnail items-->
+        <!-- <script type="text/javascript">
+             require(['jquery', 'domReady!'], function ($) {
+                 setTimeout(function () {
+                     $('.block-content.no-items').slideUp().siblings('.block-title').slideUp();
+                 }, 5000);
+                 //binding events for videos items if exist
+                 $('.item.click-to-play').each(function (i, el) {
+                     $(el).click(function (e) {
+                         e.preventDefault();
+
+                         // clean some not needed elements and CSS classes
+                         $(this).removeClass('click-to-play').addClass('clicked-to-play');
+                         if (!$(this).closest('.outside').length) { //has used inside style
+                             $(this).find('.slide-content-desc').remove();
+                         }
+                         //make video embed
+                         var embedVideo = null;
+                         var $coverAnchor = $(this).find("a.media");
+                         var videoW = ($coverAnchor.data('video-width') != 'auto')
+                             ? $coverAnchor.data('video-width')
+                             : $coverAnchor.parent().outerWidth();
+                         var videoH = ($coverAnchor.data('video-height') != 'auto')
+                             ? $coverAnchor.data('video-height')
+                             : $coverAnchor.parent().outerHeight();
+                         if ($coverAnchor.hasClass('youtube-video')) {
+                             embedVideo = '<div class="youtube"><iframe width="' + videoW + '" height="' + videoH
+                                 + '" src="https://www.youtube.com/embed/' + $coverAnchor.data('video-id')
+                                 + '?autoplay=1" frameborder="0" allowfullscreen></iframe></div>';
+                         } else if ($coverAnchor.hasClass('vimeo-video'))  {
+                             embedVideo = '<div class="vimeo"><iframe width="' + videoW + '" height="' + videoH
+                                 + '" src="https://player.vimeo.com/video/' + $coverAnchor.data('video-id')
+                                 + '?autoplay=0&loop=1&wmode=transparent&player_id=video-player-thumb-' + $coverAnchor.data('video-id')
+                                 + '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>';
+                         } else {
+                             embedVideo = '';
+                         }
+                         //show the embed
+                         $coverAnchor.children('img.slide-image').replaceWith(embedVideo);
+
+                         return false;
+                     });
+                 });
+             })
+         </script>-->
+    </div>
+    <main id="maincontent">
+        <a id="contentarea" tabindex="-1"></a>
+        <div class="page-title-wrapper">
+            <h1 class="page-title">
+                <span class="base" data-ui-id="page-title-wrapper">Home Page</span></h1>
+        </div>
+        <div class="page messages">
+            <div data-placeholder="messages"></div>
+            <div data-bind="scope: 'messages'">
+                <!-- ko if: cookieMessages && cookieMessages.length > 0 -->
+                <div role="alert" data-bind="foreach: { data: cookieMessages, as: 'message' }" class="messages">
+                    <div data-bind="attr: {
+            class: 'message-' + message.type + ' ' + message.type + ' message',
+            'data-ui-id': 'message-' + message.type
+        }">
+                        <div data-bind="html: $parent.prepareMessageForHtml(message.text)"></div>
+                    </div>
+                </div>
+                <!-- /ko -->
+
+                <!-- ko if: messages().messages && messages().messages.length > 0 -->
+                <div role="alert" data-bind="foreach: { data: messages().messages, as: 'message' }" class="messages">
+                    <div data-bind="attr: {
+            class: 'message-' + message.type + ' ' + message.type + ' message',
+            'data-ui-id': 'message-' + message.type
+        }">
+                        <div data-bind="html: $parent.prepareMessageForHtml(message.text)"></div>
+                    </div>
+                </div>
+                <!-- /ko -->
+            </div>
+            <script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                        "messages": {
+                            "component": "Magento_Theme/js/view/messages"
+                        }
+                    }
+                }
+            }
+    }
+
+
+
+            </script>
+        </div>
+
+        <!--PRODUCT SLIDER START-->
+        <div class="block ub-content-slider slider-products preparez-block">
+            <div class="inner-content">
+                <div class="block-title custom-arrows-block">
+                    <h2> Préparez vos cultures du printemps </h2>
+                    <div class="custom-pagination">
+                        <span class="custom-pagination__prev preparez-block__prev"></span>
+                        <span class="custom-pagination__next preparez-block__next"></span>
+                    </div>
+                </div>
+                <div class="block-content preparez-block__slider"
+                     dir="auto"
+                     data-mage-init='{"ubSlick": {"enable":"1","show_title":"1","title":"Latest Products","content_type":"latest_products","slider_id":null,"slider_key":null,"category_ids":"23","sort_by":"name","sort_dir":"ASC","from_date":null,"to_date":null,"qty":"8","item_width":"0","item_height":"0","show_item_title":"1","show_item_desc":"1","thumb_width":"0","thumb_height":"0","show_name":"1","show_price":"1","show_desc":"1","desc_length":"100","show_review":"1","show_wishlist":"1","show_compare":"1","show_add_cart":"1","show_readmore":"1","js_lib":"slick","single_item":"0","number_items":"5","number_items_desktop":"5","number_items_desktop_small":"4","number_items_tablet":"4","number_items_tablet_small":"2","number_items_mobile":"1","auto_height":"1","auto_run":"1","slide_speed":"3000","stop_on_hover":"1","show_navigation":"1","infinite":"0","navigation_text":["Prev","Next"],"show_paging":"1","enable_lazyload":"1","slide_transition":"fade","addition_class":null,"template":null,"rows":"1","items_per_row":"1","items_to_scroll":"1","variable_width":"0","vertical":"0","center_mode":"0","start_pos":"1","enable_rtl":"0","pause_on_focus":"1","pause_on_dots_hover":"1","paging_numbers":"1","show_processbar":"0","device":"mobile","attributesToSelect":["size","name","short_description","price","special_price","special_from_date","special_to_date","image","small_image","thumbnail","color","news_from_date","news_to_date","status","required_options","image_label","small_image_label","thumbnail_label","price_type","weight_type","price_view","shipment_type","msrp","msrp_display_actual_price_type","url_key","links_purchased_separately","links_exist","tax_class_id","swatch_image","is_hot"]}}'
+                >
+                    <div class="item">
+                        <div class="product-item">
+                            <div class="product-item-info">
+                                <!-- Item's thumbnail -->
+                                <a class="product-item-photo"
+                                   href="https://magento2.demo.ubertheme.com/index.php/adrienne-trek-jacket.html"
+                                   title="Adrienne Trek Jacket">
+                                    <img
+                                            src="images/preparez_1.jpg"
+                                            class=""
+                                            alt="Adrienne Trek Jacket"
+                                    />
+                                </a>
+                                <!-- Item's details -->
+                                <div class="product-item-details">
+                                    <!-- product name-->
+                                    <div class="product-item-details__ref">
+                                        Ref : 554122
+                                    </div>
+                                    <strong class="product-item-name">
+                                        <a
+                                                class="product-item-link"
+                                                title="Adrienne Trek Jacket"
+                                                href="https://magento2.demo.ubertheme.com/index.php/adrienne-trek-jacket.html">
+                                            Carré potager avec sac de culture </a>
+                                    </strong>
+                                    <!-- product short description-->
+                                    <div class="product-description">
+                                    </div>
+                                    <!-- product review-->
+                                    <div class="product-reviews-summary short">
+                                        <div class="rating-summary">
+                                            <span class="label"><span>Rating:</span></span>
+                                            <div class="rating-result"
+                                                 id="rating-result_1322"
+                                                 title="60%">
+                                                <span><span>60%</span></span>
+                                            </div>
+                                            <script type="text&#x2F;javascript">var elemIqCRVs9A = document.querySelector('#rating-result_1322 span');
+                                            if (elemIqCRVs9A) {
+                                                elemIqCRVs9A.style.width = '60%';
+                                            }</script>
+                                        </div>
+                                        <div class="reviews-actions">
+                                            <a class="action view"
+                                               href="https://magento2.demo.ubertheme.com/index.php/adrienne-trek-jacket.html#reviews">3
+                                                &nbsp;<span>avis</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- product price-->
+                                    <div class="price-box price-final_price" data-role="priceBox"
+                                         data-product-id="1322" data-price-box="product-id-1322">
+                                        <div class="price-section">
+                                            <span
+                                                    class="normal-price">
+
+
+<span class="price-container price-final_price&#x20;tax&#x20;weee"
+>
+            <span class="price-label">À partir de</span>
+        <span id="product-price-1322" data-price-amount="1149"
+              data-price-type="finalPrice"
+              class="price-wrapper "
+        ><span class="price">HT   1149,00 € </span></span>
+        </span>
+</span>
+                                            <span class="ttc-price">
+                                            <span class="price-container price-ttc_price&#x20;tax&#x20;weee"
+                                            >
+                                                 <span id="product-price-1333" data-price-amount="1267"
+                                                       data-price-type="finalPrice"
+                                                       class="price-wrapper "
+                                                 ><span class="price">TTC  1267,00 € </span></span>
+
+                                            </span>
+                                        </span>
+                                            <span class="lieu-price">
+                                             <span class="price-container price-lieu_price&#x20;tax&#x20;weee"
+                                             >
+                                                 <span id="product-price-1335" data-price-amount="1367"
+                                                       data-price-type="lieuPrice"
+                                                       class="price-wrapper "
+                                                 ><span class="price">au lieu de <span>1367,00€ </span> </span></span>
+                                            </span>
+
+                                        </span>
+                                        </div>
+                                        <span class="discount-box">
+                                            -15%
+                                        </span>
+                                    </div>
+                                    <!-- product links -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="product-item">
+                            <div class="product-item-info">
+                                <!-- Item's thumbnail -->
+                                <a class="product-item-photo"
+                                   href="https://magento2.demo.ubertheme.com/index.php/adrienne-trek-jacket.html"
+                                   title="Adrienne Trek Jacket">
+                                    <img
+                                            src="images/preparez_2.jpg"
+                                            class=""
+                                            alt="Adrienne Trek Jacket"
+                                    />
+                                </a>
+                                <!-- Item's details -->
+                                <div class="product-item-details">
+                                    <!-- product name-->
+                                    <div class="product-item-details__ref">
+                                        Ref : 554122
+                                    </div>
+                                    <strong class="product-item-name">
+                                        <a
+                                                class="product-item-link"
+                                                title="Adrienne Trek Jacket"
+                                                href="https://magento2.demo.ubertheme.com/index.php/adrienne-trek-jacket.html">
+                                            Pots biodégradables <br>x144
+                                        </a>
+                                    </strong>
+                                    <!-- product short description-->
+                                    <div class="product-description">
+                                    </div>
+                                    <!-- product review-->
+                                    <div class="product-reviews-summary short">
+                                        <div class="rating-summary">
+                                            <span class="label"><span>Rating:</span></span>
+                                            <div class="rating-result"
+                                                 id="rating-result_1323"
+                                                 title="60%">
+                                                <span><span>60%</span></span>
+                                            </div>
+                                            <script type="text&#x2F;javascript">var elemIqCRVs9A = document.querySelector('#rating-result_1323 span');
+                                            if (elemIqCRVs9A) {
+                                                elemIqCRVs9A.style.width = '60%';
+                                            }</script>
+                                        </div>
+                                        <div class="reviews-actions">
+                                            <a class="action view"
+                                               href="https://magento2.demo.ubertheme.com/index.php/adrienne-trek-jacket.html#reviews">3
+                                                &nbsp;<span>avis</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- product price-->
+                                    <div class="price-box price-final_price" data-role="priceBox"
+                                         data-product-id="1323" data-price-box="product-id-1323">
+                                        <div class="price-section">
+                                            <span
+                                                    class="normal-price">
+
+
+<span class="price-container price-final_price&#x20;tax&#x20;weee"
+>
+            <span class="price-label">À partir de</span>
+        <span id="product-price-1323" data-price-amount="1149"
+              data-price-type="finalPrice"
+              class="price-wrapper "
+        ><span class="price">HT   1149,00 € </span></span>
+        </span>
+</span>
+                                            <span class="ttc-price">
+                                            <span class="price-container price-ttc_price&#x20;tax&#x20;weee"
+                                            >
+                                                 <span id="product-price-1330" data-price-amount="1267"
+                                                       data-price-type="finalPrice"
+                                                       class="price-wrapper "
+                                                 ><span class="price">TTC  1267,00 € </span></span>
+
+                                            </span>
+                                        </span>
+                                            <span class="lieu-price">
+                                             <span class="price-container price-lieu_price&#x20;tax&#x20;weee"
+                                             >
+                                                 <span id="product-price-1336" data-price-amount="1367"
+                                                       data-price-type="lieuPrice"
+                                                       class="price-wrapper "
+                                                 ><span class="price">au lieu de <span>1367,00€ </span> </span></span>
+                                            </span>
+
+                                        </span>
+                                        </div>
+                                        <span class="discount-box">
+                                            -15%
+                                        </span>
+                                    </div>
+                                    <!-- product links -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="product-item">
+                            <div class="product-item-info">
+                                <!-- Item's thumbnail -->
+                                <a class="product-item-photo"
+                                   href="https://magento2.demo.ubertheme.com/index.php/adrienne-trek-jacket.html"
+                                   title="Adrienne Trek Jacket">
+                                    <img
+                                            src="images/preparez_1.jpg"
+                                            class=""
+                                            alt="Adrienne Trek Jacket"
+                                    />
+                                </a>
+                                <!-- Item's details -->
+                                <div class="product-item-details">
+                                    <!-- product name-->
+                                    <div class="product-item-details__ref">
+                                        Ref : 554122
+                                    </div>
+                                    <strong class="product-item-name">
+                                        <a
+                                                class="product-item-link"
+                                                title="Adrienne Trek Jacket"
+                                                href="https://magento2.demo.ubertheme.com/index.php/adrienne-trek-jacket.html">
+                                            Carré potager avec sac de culture </a>
+                                    </strong>
+                                    <!-- product short description-->
+                                    <div class="product-description">
+                                    </div>
+                                    <!-- product review-->
+                                    <div class="product-reviews-summary short">
+                                        <div class="rating-summary">
+                                            <span class="label"><span>Rating:</span></span>
+                                            <div class="rating-result"
+                                                 id="rating-result_1324"
+                                                 title="60%">
+                                                <span><span>60%</span></span>
+                                            </div>
+                                            <script type="text&#x2F;javascript">var elemIqCRVs9A = document.querySelector('#rating-result_1324 span');
+                                            if (elemIqCRVs9A) {
+                                                elemIqCRVs9A.style.width = '60%';
+                                            }</script>
+                                        </div>
+                                        <div class="reviews-actions">
+                                            <a class="action view"
+                                               href="https://magento2.demo.ubertheme.com/index.php/adrienne-trek-jacket.html#reviews">3
+                                                &nbsp;<span>avis</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- product price-->
+                                    <div class="price-box price-final_price" data-role="priceBox"
+                                         data-product-id="1324" data-price-box="product-id-1324">
+                                        <div class="price-section">
+                                            <span
+                                                    class="normal-price">
+
+
+<span class="price-container price-final_price&#x20;tax&#x20;weee"
+>
+            <span class="price-label">À partir de</span>
+        <span id="product-price-1324" data-price-amount="1149"
+              data-price-type="finalPrice"
+              class="price-wrapper "
+        ><span class="price">HT   1149,00 € </span></span>
+        </span>
+</span>
+                                            <span class="ttc-price">
+                                            <span class="price-container price-ttc_price&#x20;tax&#x20;weee"
+                                            >
+                                                 <span id="product-price-1334" data-price-amount="1267"
+                                                       data-price-type="finalPrice"
+                                                       class="price-wrapper "
+                                                 ><span class="price">TTC  1267,00 € </span></span>
+
+                                            </span>
+                                        </span>
+                                            <span class="lieu-price">
+                                             <span class="price-container price-lieu_price&#x20;tax&#x20;weee"
+                                             >
+                                                 <span id="product-price-1337" data-price-amount="1367"
+                                                       data-price-type="lieuPrice"
+                                                       class="price-wrapper "
+                                                 ><span class="price">au lieu de <span>1367,00€ </span> </span></span>
+                                            </span>
+
+                                        </span>
+                                        </div>
+                                        <span class="discount-box">
+                                            -15%
+                                        </span>
+                                    </div>
+                                    <!-- product links -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="product-item">
+                            <div class="product-item-info">
+                                <!-- Item's thumbnail -->
+                                <a class="product-item-photo"
+                                   href="https://magento2.demo.ubertheme.com/index.php/adrienne-trek-jacket.html"
+                                   title="Adrienne Trek Jacket">
+                                    <img
+                                            src="images/preparez_2.jpg"
+                                            class=""
+                                            alt="Adrienne Trek Jacket"
+                                    />
+                                </a>
+                                <!-- Item's details -->
+                                <div class="product-item-details">
+                                    <!-- product name-->
+                                    <div class="product-item-details__ref">
+                                        Ref : 554122
+                                    </div>
+                                    <strong class="product-item-name">
+                                        <a
+                                                class="product-item-link"
+                                                title="Adrienne Trek Jacket"
+                                                href="https://magento2.demo.ubertheme.com/index.php/adrienne-trek-jacket.html">
+                                            Pots biodégradables <br>x144
+                                        </a>
+                                    </strong>
+                                    <!-- product short description-->
+                                    <div class="product-description">
+                                    </div>
+                                    <!-- product review-->
+                                    <div class="product-reviews-summary short">
+                                        <div class="rating-summary">
+                                            <span class="label"><span>Rating:</span></span>
+                                            <div class="rating-result"
+                                                 id="rating-result_1328"
+                                                 title="60%">
+                                                <span><span>60%</span></span>
+                                            </div>
+                                            <script type="text&#x2F;javascript">var elemIqCRVs9A = document.querySelector('#rating-result_1328 span');
+                                            if (elemIqCRVs9A) {
+                                                elemIqCRVs9A.style.width = '60%';
+                                            }</script>
+                                        </div>
+                                        <div class="reviews-actions">
+                                            <a class="action view"
+                                               href="https://magento2.demo.ubertheme.com/index.php/adrienne-trek-jacket.html#reviews">3
+                                                &nbsp;<span>avis</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- product price-->
+                                    <div class="price-box price-final_price" data-role="priceBox"
+                                         data-product-id="1328" data-price-box="product-id-1328">
+                                        <div class="price-section">
+                                            <span
+                                                    class="normal-price">
+
+
+<span class="price-container price-final_price&#x20;tax&#x20;weee"
+>
+            <span class="price-label">À partir de</span>
+        <span id="product-price-1328" data-price-amount="1149"
+              data-price-type="finalPrice"
+              class="price-wrapper "
+        ><span class="price">HT   1149,00 € </span></span>
+        </span>
+</span>
+                                            <span class="ttc-price">
+                                            <span class="price-container price-ttc_price&#x20;tax&#x20;weee"
+                                            >
+                                                 <span id="product-price-1331" data-price-amount="1267"
+                                                       data-price-type="finalPrice"
+                                                       class="price-wrapper "
+                                                 ><span class="price">TTC  1267,00 € </span></span>
+
+                                            </span>
+                                        </span>
+                                            <span class="lieu-price">
+                                             <span class="price-container price-lieu_price&#x20;tax&#x20;weee"
+                                             >
+                                                 <span id="product-price-1338" data-price-amount="1367"
+                                                       data-price-type="lieuPrice"
+                                                       class="price-wrapper "
+                                                 ><span class="price">au lieu de <span>1367,00€ </span> </span></span>
+                                            </span>
+
+                                        </span>
+                                        </div>
+                                        <span class="discount-box">
+                                            -15%
+                                        </span>
+                                    </div>
+                                    <!-- product links -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--Slider content-->
+
+            <!--// Slider content-->
+            <!-- Thumbnail items-->
+            <!--// Thumbnail items-->
+        </div>
+        <!--PRODUCT SLIDER END-->
+    </main>
+
+    <!--<div class="inner-content">
+        <div class="tile tile-upper">
+            <a href="#">
+                <img src="images/informe_1.jpg" alt="newsfeed">
+                <span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </a>
+            <a href="#"><img src="images/informe_2.jpg" alt="newsfeed"></a>
+        </div>
+        <div class="tile tile-lower">
+            <a href="#"><img src="images/informe_1.jpg" alt="newsfeed"></a>
+            <a href="#"><img src="images/informe_2.jpg" alt="newsfeed"></a>
+        </div>
+    </div>-->
 </div>
-
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/slick-carousel/slick/slick.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

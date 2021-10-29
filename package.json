@@ -27,6 +27,8 @@
     "grunt-html": "^15.1.0"
   },
   "dependencies": {
-    "grunt-contrib-uglify": "^5.0.1"
+    "grunt-contrib-uglify": "^5.0.1",
+    "jquery": "^3.6.0",
+    "slick-carousel": "^1.8.1"
   }
 }
