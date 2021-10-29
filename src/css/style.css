@@ -182,6 +182,9 @@ body {
 a {
   color: inherit;
 }
+.container {
+  padding: 0 98px;
+}
 .header {
   padding-top: 11px;
   padding-bottom: 14px;
@@ -896,5 +899,51 @@ a {
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.1s linear;
+}
+.action__wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  background: #531754;
+  border-radius: 10px;
+  padding-left: 71px;
+  padding-top: 62px;
+  padding-bottom: 59px;
+}
+.action__right-block {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.action__type {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 0 16px 0 15px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 2;
+  color: #FFFFFF;
+  background: #E05E82;
+  border-radius: 50px;
+}
+.action__primary-title {
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.19;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+}
+.action__button {
+  outline: none;
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  margin: 0 0 0 3px;
+  padding: 16px 38px 15px 30px;
+  color: #FFFFFF;
+  border: 2px solid currentColor;
+  border-radius: 10px;
 }
 /*# sourceMappingURL=style.css.map */
