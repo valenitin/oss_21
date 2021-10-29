@@ -1,0 +1,119 @@
+.news {
+  padding: 108px 100px 100px 100px;
+
+  &__title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.17;
+    padding-bottom: 40px;
+
+    & span {
+      color: #A52B41;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 54px;
+  }
+
+  &__item:nth-child(even) {
+    width: 493px;
+    height: 383px;
+
+  }
+
+  &__item:nth-child(odd) {
+    width: 707px;
+    height: 383px;
+
+  }
+
+  &__item:not(:nth-last-child(-n+2)) {
+    margin-bottom: 47px;
+  }
+
+  &__item:nth-child(1) {
+    margin-right: 40px;
+  }
+
+  &__item:nth-child(3) {
+    order: 4;
+  }
+
+  &__item:nth-child(4) {
+
+    order: 3;
+    margin-right: 40px;
+  }
+
+  &__item {
+    position: relative;
+  }
+  &__img{
+    border-radius: 10px;
+  }
+  &__desc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 37px 30px 33px;
+
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 32px;
+      right: 66px;
+      width: 10px;
+      height: 14px;
+      background: url("../img/news-arrow.svg");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__content {
+    background-color: #fff;
+    padding: 19px 45px 26px 33px;
+    border-radius: 8px;
+    border: 1px solid rgba(231, 234, 237, 0.6);
+    box-shadow: 0px 4px 54px rgba(0, 0, 0, 0.05);
+    max-height: 130px;
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    margin-bottom: 2px;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 1.71;
+    color: #525252;
+  }
+  &__button-wrapper{
+    display: flex;
+    justify-content: center;
+    &:hover button,&:focus button{
+      border: 2px solid @main-black;
+    }
+  }
+  &__button-more{
+    outline: none;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.57;
+    border: 2px solid #E7EAED;
+    padding:  14px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.1s linear;
+  }
+}
