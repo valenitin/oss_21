@@ -1,20 +1,16 @@
 .action {
+  color: @main-white;
+
   &__wrapper {
     position: relative;
     width: 100%;
-    max-width: 1440px;
+    max-width: 1233px;
+    max-height: 319px;
     background: #531754;
     border-radius: 10px;
-    padding-left: 71px;
-    padding-top: 62px;
-    padding-bottom: 59px;
+    padding: 56px 71px 58px;
   }
 
-  &__right-block {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
 
   &__type {
     display: inline-block;
@@ -23,8 +19,6 @@
     font-weight: 700;
     font-size: 12px;
     line-height: 2;
-    color: @main-white;
-
     background: #E05E82;
     border-radius: 50px;
 
@@ -36,7 +30,7 @@
     font-size: 36px;
     line-height: 1.19;
     letter-spacing: 0.02em;
-    color: @main-white;
+
   }
 
   &__button {
@@ -47,8 +41,59 @@
     line-height: 1.14;
     margin: 0 0 0 3px;
     padding: 16px 38px 15px 30px;
-    color: @main-white;
+    color: inherit;
     border: 2px solid currentColor;
     border-radius: 10px;
   }
+
+  &__right-block {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 47px 38px 0 0;
+  }
+
+  &__second-title {
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  &__text-wrapper {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.15;
+    text-align: center;
+    margin-bottom: 21px;
+  }
+
+  &__percent {
+    display: block;
+    font-size: 73px;
+    line-height: 1;
+    padding-left: 5px;
+  }
+
+  &__text {
+    display: block;
+    margin-top: -7px;
+    padding-left: 12px;
+
+  }
+
+  &__desc {
+
+    padding-left: 29px;
+    font-size: 14px;
+    line-height: 1.29;
+    text-align: center;
+  }
+
+  .card {
+    .card-style(24px, 391px, 1, -8.3deg);
+  }
 }
+
+

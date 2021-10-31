@@ -14,6 +14,7 @@
   .text{
     font-size: 12px;
     margin-right: 7px;
+    color: @main-black;
   }
 
   .icon{
@@ -24,8 +25,7 @@
     height: 40px;
     border: 1px solid #E7EAED;
     border-radius: 100px;
-    &:hover,&:focus{
-    }
+
   }
 }
 
@@ -117,4 +117,61 @@
   & .slick-active button{
     background-color: @color-active;
   }
+}
+
+
+// for cards in action section
+
+.card-style(@posBott,@posLeft,@scale,@rotate){
+  position: absolute;
+  bottom: @posBott;
+  left: @posLeft;
+  backdrop-filter: blur(42px);
+  color: #F1F1F1;
+  padding: 24px 21px 17px 24px;
+  border-radius: 14px;
+  transform-origin: left bottom;
+  transform: rotate(@rotate) scale(@scale);
+  background: radial-gradient(100% 100% at 0% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+
+
+&__brand-name {
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: right;
+  margin-bottom: 78px;
+  margin-right: 7px;
+}
+
+&__card-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -4px;
+  margin-left: 3px;
+  margin-right: 9px;
+}
+
+&__client-name {
+  margin-right: 101px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.67;
+}
+
+&__date {
+  font-family: @card-numbers;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.43;
+}
+
+&__card-number {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 2;
+  font-family: @card-numbers;
+  letter-spacing: 4.91px;
+  margin-left: 3px;
+}
 }
