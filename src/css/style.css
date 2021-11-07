@@ -326,10 +326,14 @@ a {
   border-radius: 100px;
 }
 .nav-sections {
-  padding: 12px 0 15px 54px;
+  padding: 0 0 0 54px;
+  height: 54px;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #E7EAED;
+}
+.nav-sections__item {
+  padding-top: 13px;
 }
 .nav-sections__item--right {
   display: flex;
@@ -338,6 +342,7 @@ a {
 .nav-sections__link {
   position: relative;
   margin-right: 30px;
+  margin-top: -3px;
   font-size: 14px;
   font-weight: 700;
 }
@@ -366,7 +371,7 @@ a {
   content: '';
   position: absolute;
   top: 57%;
-  right: 29px;
+  right: 25px;
   transform: translateY(-50%);
   background-image: url(../img/arrow-down.svg);
   background-repeat: no-repeat;
@@ -383,7 +388,7 @@ a {
   outline: none;
   background: transparent;
   overflow: hidden;
-  padding: 0 30px;
+  padding: 20px 30px 20px 30px;
   appearance: none;
   cursor: pointer;
 }
@@ -578,13 +583,16 @@ a {
   background-color: #F1F1F1;
 }
 .product-block__head {
-  padding-bottom: 43px;
+  padding-bottom: 31px;
   display: flex;
   justify-content: space-between;
 }
 .product-block .block-title strong {
   font-weight: 700;
   font-size: 36px;
+}
+.product-block__slider-arrows {
+  padding-bottom: 2px;
 }
 .product-block .product-item {
   padding: 40px 46px 44px 45px;
@@ -791,13 +799,24 @@ a {
 .product-slider .products__dots .slick-active button {
   background-color: #FFFFFF;
 }
-.product-slider .slider-arrows > span {
-  font-size: 20px;
-  display: block;
-  width: 50px;
-  height: 50px;
-  border: 2px solid #0F171F;
+.slider-arrows {
+  display: flex;
+}
+.slider-arrows__prev,
+.slider-arrows__next {
+  max-height: 50px;
+  max-width: 50px;
+  color: #0F171F;
+  border: 2px solid currentColor;
   border-radius: 80px;
+  padding: 15px 17px 12px 17px;
+}
+.slider-arrows__next {
+  margin-left: 14px;
+}
+.slider-arrows svg {
+  width: 12px;
+  height: 18px;
 }
 .news {
   padding: 108px 100px 106px 100px;
@@ -901,23 +920,25 @@ a {
   cursor: pointer;
   transition: all 0.1s linear;
 }
-.action {
+.action-block {
   color: #FFFFFF;
+  padding-bottom: 100px;
 }
-.action__inner {
+.action-block__inner {
   position: relative;
   max-width: 1233px;
   max-height: 319px;
   background: #531754;
   border-radius: 10px;
+  padding-bottom: 102px;
 }
-.action__wrapper {
+.action-block__wrapper {
   position: relative;
   width: 100%;
   padding: 56px 71px 58px;
   overflow: hidden;
 }
-.action__type {
+.action-block__type {
   display: inline-block;
   margin-bottom: 18px;
   padding: 0 16px 0 15px;
@@ -927,14 +948,14 @@ a {
   background: #E05E82;
   border-radius: 50px;
 }
-.action__primary-title {
+.action-block__primary-title {
   margin-bottom: 30px;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.19;
   letter-spacing: 0.02em;
 }
-.action__button {
+.action-block__button {
   outline: none;
   background-color: transparent;
   font-weight: 700;
@@ -946,7 +967,7 @@ a {
   border: 2px solid currentColor;
   border-radius: 10px;
 }
-.action__right-block {
+.action-block__right-block {
   position: absolute;
   top: 0;
   right: 0;
@@ -954,7 +975,7 @@ a {
   z-index: 1;
   height: 100%;
 }
-.action__right-block::after {
+.action-block__right-block::after {
   position: absolute;
   top: -90px;
   left: -44px;
@@ -965,38 +986,38 @@ a {
   z-index: -1;
   transform: rotate(-10deg);
 }
-.action__second-title {
+.action-block__second-title {
   margin-bottom: 16px;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.25;
   text-align: center;
 }
-.action__text-wrapper {
+.action-block__text-wrapper {
   font-weight: 700;
   font-size: 26px;
   line-height: 1.15;
   text-align: center;
   margin-bottom: 21px;
 }
-.action__percent {
+.action-block__percent {
   display: block;
   font-size: 73px;
   line-height: 1;
   padding-left: 5px;
 }
-.action__text {
+.action-block__text {
   display: block;
   margin-top: -7px;
   padding-left: 12px;
 }
-.action__desc {
+.action-block__desc {
   padding-left: 29px;
   font-size: 14px;
   line-height: 1.29;
   text-align: center;
 }
-.action__card-block {
+.action-block__card-block {
   position: absolute;
   top: 0;
   left: 325px;
@@ -1005,18 +1026,18 @@ a {
   max-width: 539px;
   z-index: 1;
 }
-.action__card {
+.action-block__card {
   position: absolute;
 }
-.action__card[src="./img/card-1.png"] {
+.action-block__card[src="./img/card-1.png"] {
   bottom: 23px;
   left: 40px;
 }
-.action__card[src="./img/card-2.png"] {
+.action-block__card[src="./img/card-2.png"] {
   top: -67px;
   right: 0;
 }
-.action__card[src="./img/card-3.png"] {
+.action-block__card[src="./img/card-3.png"] {
   top: -46px;
 }
 .advantage {

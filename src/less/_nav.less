@@ -1,9 +1,13 @@
 .nav-sections {
-  padding: 12px 0 15px 54px;
+  padding: 0 0 0 54px;
+  height: 54px;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #E7EAED;
+
   &__item {
+    padding-top: 13px;
+
     &--right {
       display: flex;
       align-items: center;
@@ -13,9 +17,11 @@
   &__link {
     position: relative;
     margin-right: 30px;
+    margin-top: -3px;
     font-size: 14px;
     font-weight: 700;
-    &::after{
+
+    &::after {
       content: '';
       position: absolute;
       top: -17px;
@@ -24,7 +30,8 @@
       width: 1px;
       background-color: #E7EAED;
     }
-    &:hover,&:focus{
+
+    &:hover, &:focus {
       text-decoration: underline;
     }
   }
@@ -42,7 +49,7 @@
       content: '';
       position: absolute;
       top: 57%;
-      right: 29px;
+      right: 25px;
       transform: translateY(-50%);
       background-image: url(../img/arrow-down.svg);
       background-repeat: no-repeat;
@@ -61,7 +68,7 @@
     outline: none;
     background: transparent;
     overflow: hidden;
-    padding: 0 30px;
+    padding: 20px 30px 20px 30px;
     appearance: none;
     cursor: pointer;
 
@@ -109,7 +116,8 @@
     font-weight: 700;
     display: flex;
     align-items: center;
-    &:hover,&:focus{
+
+    &:hover, &:focus {
       text-decoration: underline;
     }
 
@@ -121,7 +129,8 @@
   .navigation__link {
     font-size: 14px;
     font-weight: 700;
-    &:hover,&:focus{
+
+    &:hover, &:focus {
       text-decoration: underline;
     }
   }
