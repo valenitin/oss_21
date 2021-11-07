@@ -1026,4 +1026,35 @@ a {
   letter-spacing: 4.91px;
   margin-left: 3px;
 }
+.advantage {
+  background-color: #A52B41;
+  padding-top: 54px;
+  padding-bottom: 62px;
+}
+.advantage__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.advantage__item {
+  display: flex;
+  align-items: center;
+}
+.advantage__item + .advantage__item {
+  margin-left: 57px;
+}
+.advantage__text-wrapper {
+  color: #FFFFFF;
+  margin-left: 26px;
+}
+.advantage__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.19;
+  text-transform: capitalize;
+}
+.advantage__text {
+  font-size: 14px;
+  line-height: 1.71;
+}
 /*# sourceMappingURL=style.css.map */
