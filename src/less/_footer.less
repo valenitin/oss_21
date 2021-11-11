@@ -1,0 +1,116 @@
+.footer {
+  background-color: #303030;
+  color: @main-white;
+}
+
+.reviews {
+  padding-top: 97px;
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 55px;
+  }
+
+  &__img {
+    padding-top: 10px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.39;
+    margin-right: 45px;
+
+  }
+
+  &__more-link {
+    padding-top: 13px;
+    padding-right: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.2;
+    text-decoration: underline;
+  }
+
+}
+
+
+.reviews-slider {
+
+  &__wrapper {
+    max-width: 386px;
+    max-height: 199px;
+    display: flex;
+    padding-left: 28px;
+  }
+
+  &__content {
+    margin-left: 18px;
+    margin-top: 4px;
+  }
+
+  &__title{
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.7;
+  }
+  &__total {
+    margin-top: 11px;
+    margin-bottom: -6px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.7;
+  }
+
+  &__descr {
+    font-size: 14px;
+    line-height: 1.71
+
+  }
+
+  &__rating-result {
+    position: relative;
+
+
+    &:before {
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+      -webkit-font-smoothing: antialiased;
+      color: #c7c7c7;
+      font-family: 'luma-icons';
+      font-size: 23px;
+      height: 23px;
+      letter-spacing: 7px;
+      line-height: 16px;
+      content: '\e605' '\e605' '\e605' '\e605' '\e605';
+      display: block;
+      font-style: normal;
+      font-weight: 400;
+      speak: none;
+    }
+  }
+
+  &__rating-result > span {
+    &:before {
+      position: relative;
+      z-index: 2;
+      -webkit-font-smoothing: antialiased;
+      color: #FFB000;
+      font-family: 'luma-icons';
+      font-size: 23px;
+      height: 23px;
+      letter-spacing: 7px;
+      line-height: 16px;
+      content: '\e605' '\e605' '\e605' '\e605';
+      display: block;
+      font-style: normal;
+      font-weight: 400;
+      speak: none;
+    }
+  }
+}

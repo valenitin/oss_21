@@ -13,16 +13,11 @@ $(document).ready(function () {
     $('.product-slider').slick({
         arrows: false,
         appendArrows:'.slider-arrows',
-        // prevArrow:'<span class="slider-arrow"><svg width="9" height="15"><use href="./img/icons.svg#icon-arrow-left"></use></svg></span>',
-        // nextArrow:'<span class="slider-arrow"><svg width="9" height="15"><use href="./img/icons.svg#icon-arrow-right"></use></svg></span>',
         dots: true,
         variableWidth: true,
         dotsClass: 'products__dots',
         slidesToShow: 2,
         slidesToScroll: 2,
-
-
-
     });
 
     $(".slider-arrows__next").click(function() {
@@ -33,6 +28,15 @@ $(document).ready(function () {
         $(".product-slider").slick('slickPrev');
     });
 
+    $('.reviews-slider').slick({
+        arrows: false,
+        dots: false,
+        pauseOnHover: true,
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+
+    });
 
 
 
